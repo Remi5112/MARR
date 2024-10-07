@@ -1,0 +1,231 @@
+/* --- Variables globales --- */
+:root {
+    --main-bg-color: #f4f4f4; /* Couleur de fond principale */
+    --text-color: #333; /* Couleur du texte par défaut */
+    --accent-color: #A8DADC; /* Couleur d'accentuation */
+    --primary-color: black; /* Couleur principale (noir) */
+    --font-size-large: 1.2em; /* Taille de police pour les éléments larges */
+    --padding-standard: 10px; /* Espacement standard */
+}
+
+/* --- Réinitialisation des marges et du box-sizing global --- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Styles de base pour HTML et BODY --- */
+html, body {
+    height: 100%;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le body occupe toute la hauteur */
+}
+
+/* --- Conteneur global pour mise en page centrée --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centre le contenu horizontalement */
+    padding: 2em; /* Espacement autour du contenu */
+}
+
+/* --- Styles pour le HEADER --- */
+header {
+    background-color: white;
+    border-bottom: 2px solid var(--primary-color); /* Bordure inférieure noire */
+    padding: var(--padding-standard);
+    text-align: center;
+}
+
+h1, h2 {
+    margin-top: 20px;
+    margin-bottom: 40px; /* Espacement autour des titres */
+}
+
+/* --- Styles pour le logo dans le header --- */
+.logo img {
+    max-width: 120px; /* Limite la largeur du logo */
+    height: auto; /* Préserve le ratio d'aspect */
+}
+
+/* --- Styles pour la navigation (NAV) --- */
+nav ul {
+    list-style: none; /* Retire les puces */
+    display: flex;
+    justify-content: center; /* Centre les éléments de la navigation */
+    gap: 100px; /* Espacement entre les éléments */
+    padding: 15px 0; /* Espacement interne */
+}
+
+nav ul li a {
+    color: var(--primary-color); /* Couleur des liens */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    font-size: var(--font-size-large); /* Taille des liens */
+    transition: color 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+nav ul li a:hover {
+    color: var(--accent-color); /* Couleur de survol */
+}
+
+/* --- Styles pour la section principale (MAIN) --- */
+main {
+    flex: 1; /* Prend tout l'espace disponible entre header et footer */
+    padding: 20px;
+    text-align: justify; /* Justification du texte */
+    font-size: var(--font-size-large);
+    line-height: 1.6; /* Espacement entre les lignes */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Styles pour les paragraphes alignés à gauche et à droite --- */
+.left-paragraph,
+.right-paragraph {
+    width: 40%; /* Largeur des paragraphes */
+    text-align: justify;
+    background-color: var(--main-bg-color); /* Couleur de fond */
+    padding: var(--padding-standard);
+}
+
+.left-paragraph {
+    align-self: flex-start; /* Aligne à gauche */
+}
+
+.right-paragraph {
+    margin-left: auto; /* Aligne à droite */
+}
+
+/* --- Styles pour le FOOTER --- */
+footer {
+    background-color: white;
+    color: var(--primary-color); /* Couleur de texte du footer */
+    text-align: center;
+    padding: var(--padding-standard);
+    width: 100%;
+    border-top: 2px solid var(--primary-color); /* Bordure supérieure noire */
+    margin-top: auto; /* Garde le footer en bas de la page */
+}
+
+/* --- Espacement vertical pour les sections --- */
+section {
+    margin: 80px 0; /* Espacement entre les sections */
+}
+
+/* --- Boutons d'action principaux et secondaires (CTA et bouton secondaire) --- */
+.cta-button, .btn-secondary {
+    padding: 0px 15px; /* Espacement intérieur ajusté */
+    text-decoration: none; /* Retrait de la décoration de texte (soulignement) */
+    font-size: 1em; /* Taille de police standard pour une bonne intégration dans le texte */
+    border-radius: 4px; /* Coins légèrement arrondis pour un aspect moderne */
+    display: inline-block; /* Affichage en ligne avec propriétés de bloc pour une bonne intégration */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour les changements d'état */
+}
+
+/* --- Bouton principal (CTA) --- */
+.cta-button {
+    background-color: var(--primary-color); /* Couleur de fond du bouton principal (variable personnalisée) */
+    color: #fff; /* Couleur de texte blanche pour un contraste fort */
+    border: none; /* Retrait de la bordure par défaut */
+    padding: 10px 20px; /* Padding plus important pour un bouton CTA plus grand */
+    font-weight: bold; /* Texte en gras pour un CTA plus affirmé */
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color); /* Changement de couleur au survol pour attirer l'attention */
+    color: var(--primary-color); /* Inverse les couleurs pour un effet de survol subtil */
+}
+
+/* --- Bouton secondaire (intégré dans le texte) --- */
+.btn-secondary {
+    background-color: transparent; /* Fond transparent pour se fondre dans le texte */
+    color: var(--primary-color); /* Utilisation de la couleur principale pour le texte */
+    padding: 0; /* Retrait du padding pour ne pas créer d'espacement supplémentaire */
+    font-size: inherit; /* Correspond à la taille de police du texte environnant */
+    font-weight: normal; /* Garde le poids de police normal pour ne pas le faire ressortir */
+    border: none; /* Pas de bordure pour ressembler à un lien */
+    display: inline; /* Affichage en ligne pour se fondre parfaitement dans le texte */
+    cursor: pointer; /* Curseur pointeur pour indiquer qu'il est cliquable */
+    text-decoration: none; /* Ajoute une légère décoration pour simuler un lien */
+    transition: color 0.2s ease; /* Transition douce pour le changement de couleur */
+}
+
+.btn-secondary:hover {
+    color: var(--accent-color); /* Changement subtil de couleur au survol */
+    text-decoration: none; /* Retrait du soulignement au survol pour l'effet visuel */
+}
+
+/* --- Effets de transition avec classes utilitaires --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px); /* Décalage vers le bas */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animation */
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0); /* Retour à la position normale */
+}
+
+/* --- Styles pour la section contact --- */
+.contact-section {
+    max-width: 800px; /* Augmenter la largeur maximale du formulaire */
+    margin: 0 auto; /* Centrer le formulaire horizontalement */
+    padding: 30px; /* Ajouter de l'espace interne pour plus de confort */
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Ajoute une ombre douce */
+}
+
+/* --- Styles pour les champs du formulaire --- */
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+    width: 100%; /* Les champs prennent toute la largeur du formulaire */
+    padding: 15px; /* Ajoute de l'espace interne pour les champs de saisie */
+    margin-bottom: 20px; /* Espace entre les champs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em; /* Agrandir légèrement la taille du texte */
+}
+
+.contact-section textarea {
+    height: 150px; /* Ajuste la hauteur du champ texte */
+    resize: vertical; /* Permet de redimensionner verticalement seulement */
+}
+
+/* --- Bouton d'envoi dans le formulaire --- */
+.contact-section button {
+    width: 100%; /* Le bouton prend toute la largeur */
+    padding: 15px; /* Espacement confortable */
+    background-color: var(--primary-color); /* Couleur du bouton */
+    color: white; /* Couleur du texte sur le bouton */
+    border: none; /* Retire la bordure du bouton */
+    border-radius: 5px; /* Coins légèrement arrondis */
+    font-size: 1.2em; /* Agrandit la taille de la police du bouton */
+    cursor: pointer; /* Curseur pointeur au survol */
+    transition: background-color 0.3s ease; /* Effet de transition au survol */
+}
+
+.contact-section button:hover {
+    background-color: var(--accent-color); /* Change la couleur au survol */
+}
+
+/* --- Classe utilitaire pour cacher des éléments --- */
+.hidden {
+    display: none;
+}
+
+/* --- Centrer le CAPTCHA --- */
+.g-recaptcha {
+    display: flex;
+    justify-content: center; /* Centre horizontalement le CAPTCHA */
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
