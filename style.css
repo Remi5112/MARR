@@ -216,16 +216,3 @@ section {
 .contact-section button:hover {
     background-color: var(--accent-color); /* Change la couleur au survol */
 }
-
-/* --- Classe utilitaire pour cacher des éléments --- */
-.hidden {
-    display: none;
-}
-
-/* --- Centrer le CAPTCHA --- */
-.g-recaptcha {
-    display: flex;
-    justify-content: center; /* Centre horizontalement le CAPTCHA */
-    margin-top: 10px;
-    margin-bottom: 40px;
-}
